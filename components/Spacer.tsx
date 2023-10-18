@@ -12,7 +12,14 @@ const Spacer = (props: SpacerProps) => {
 
 	if (props.height === '2x') height = defaultHeight * 2
 
-	return <Box style={{ height: height, width: '100%' }} />
+	return (
+		<Box
+			style={{
+				height: height,
+				width: '100%',
+			}}
+		/>
+	)
 }
 
 export default Spacer

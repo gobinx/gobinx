@@ -64,6 +64,7 @@ const ProductSeller = () => {
 					}}
 				>
 					<ButtonText
+						size='xs'
 						style={{
 							color: '#00BED1',
 						}}
