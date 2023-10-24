@@ -11,6 +11,7 @@ type ProductSliderProps = {
 	navigation: any
 	title: string
 	centerComponent?: React.ReactNode
+	hideHeader?: boolean
 }
 
 const ProductSlider = (props: ProductSliderProps) => {
@@ -33,37 +34,39 @@ const ProductSlider = (props: ProductSliderProps) => {
 
 	return (
 		<Box>
-			<Box
-				style={{
-					display: 'flex',
-					flexDirection: 'row',
-					justifyContent: 'space-between',
-					marginBottom: 12,
-					width: '100%',
-				}}
-			>
-				<Text
+			{!props.hideHeader && (
+				<Box
 					style={{
-						fontSize: 19,
-						fontWeight: '600',
+						display: 'flex',
+						flexDirection: 'row',
+						justifyContent: 'space-between',
+						marginBottom: 12,
+						width: '100%',
 					}}
 				>
-					{props.title}
-				</Text>
-
-				{props.centerComponent && props.centerComponent}
-
-				<Pressable>
 					<Text
 						style={{
-							color: '#05707B',
-							fontWeight: '500',
+							fontSize: 19,
+							fontWeight: '600',
 						}}
 					>
-						See More
+						{props.title}
 					</Text>
-				</Pressable>
-			</Box>
+
+					{props.centerComponent && props.centerComponent}
+
+					<Pressable>
+						<Text
+							style={{
+								color: '#05707B',
+								fontWeight: '500',
+							}}
+						>
+							See More
+						</Text>
+					</Pressable>
+				</Box>
+			)}
 			<Box
 				style={{
 					display: 'flex',
