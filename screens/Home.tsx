@@ -12,6 +12,11 @@ import TopSearchesProductSlider from '../components/TopSearchesProductSlider'
 // Assets
 // @ts-ignore
 import midyearsale from '../assets/images/midyearsale.png'
+import Lightning from '../assets/vectors/Lightning'
+import BestSellersArrow from '../assets/vectors/BestSellersArrow'
+import DailyDealsClock from '../assets/vectors/DailyDealsClock'
+import NewArrivalMedal from '../assets/vectors/NewArrivalMedal'
+import QuickLinks from '../components/Home/QuickLinks'
 
 export default function HomeScreen({ navigation }) {
 	return (
@@ -42,21 +47,32 @@ export default function HomeScreen({ navigation }) {
 					/>
 				</Box>
 			</Container>
-			<Spacer />
+			<Spacer height='2x' />
+			<QuickLinks />
+			<Spacer height='2x' />
 			<Container>
 				<ProductSlider
 					navigation={navigation}
 					title='Flash Sale'
+					icon={<Lightning height={22} width={22} />}
 					centerComponent={<FlashSaleCountdown />}
 				/>
 			</Container>
 			<Spacer />
 			<Container>
-				<ProductSlider navigation={navigation} title='Best Sellers' />
+				<ProductSlider
+					navigation={navigation}
+					title='Best Sellers'
+					icon={<BestSellersArrow height={22} width={22} />}
+				/>
 			</Container>
 			<Spacer />
 			<Container>
-				<ProductSlider navigation={navigation} title='Daily Deals' />
+				<ProductSlider
+					navigation={navigation}
+					title='Daily Deals'
+					icon={<DailyDealsClock height={22} width={22} />}
+				/>
 			</Container>
 			<Spacer height='2x' />
 			<Container>
@@ -64,7 +80,11 @@ export default function HomeScreen({ navigation }) {
 			</Container>
 			<Spacer height='2x' />
 			<Container>
-				<ProductSlider navigation={navigation} title='New Arrivals' />
+				<ProductSlider
+					navigation={navigation}
+					title='New Arrivals'
+					icon={<NewArrivalMedal height={22} width={22} />}
+				/>
 			</Container>
 		</ScrollView>
 	)

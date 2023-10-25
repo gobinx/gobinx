@@ -9,7 +9,7 @@ const Search = () => {
 	return (
 		<Box
 			style={{
-				width: 'auto',
+				flex: 1,
 			}}
 		>
 			<TextInput

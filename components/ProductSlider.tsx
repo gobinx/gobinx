@@ -10,6 +10,7 @@ import ProductCard from './ProductCard'
 type ProductSliderProps = {
 	navigation: any
 	title: string
+	icon?: React.ReactNode
 	centerComponent?: React.ReactNode
 	hideHeader?: boolean
 }
@@ -37,21 +38,31 @@ const ProductSlider = (props: ProductSliderProps) => {
 			{!props.hideHeader && (
 				<Box
 					style={{
+						alignItems: 'center',
 						display: 'flex',
 						flexDirection: 'row',
 						justifyContent: 'space-between',
-						marginBottom: 12,
+						marginBottom: 16,
 						width: '100%',
 					}}
 				>
-					<Text
+					<Box
 						style={{
-							fontSize: 19,
-							fontWeight: '600',
+							alignItems: 'center',
+							flexDirection: 'row',
+							gap: 4,
 						}}
 					>
-						{props.title}
-					</Text>
+						<Box>{props.icon}</Box>
+						<Text
+							style={{
+								fontSize: 19,
+								fontWeight: '600',
+							}}
+						>
+							{props.title}
+						</Text>
+					</Box>
 
 					{props.centerComponent && props.centerComponent}
 

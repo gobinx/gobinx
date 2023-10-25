@@ -21,7 +21,7 @@ const ProductCard = () => {
 			style={{
 				backgroundColor: '#FFF',
 				borderColor: '#CCC',
-				borderRadius: 4,
+				borderRadius: 8,
 				borderWidth: 1,
 				marginLeft: 6,
 				marginRight: 6,

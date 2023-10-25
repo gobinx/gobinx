@@ -16,14 +16,18 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gobinx.gobinx"
+      "bundleIdentifier": "com.gobinx.gobinx",
+      "runtimeVersion": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.gobinx.gobinx"
+      "package": "com.gobinx.gobinx",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +37,9 @@
         "projectId": "f221ff35-6fb3-4a40-90b5-21c48346f652"
       }
     },
-    "owner": "gobinx"
+    "owner": "gobinx",
+    "updates": {
+      "url": "https://u.expo.dev/f221ff35-6fb3-4a40-90b5-21c48346f652"
+    }
   }
 }

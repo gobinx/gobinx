@@ -29,11 +29,12 @@ const FlashSaleCountdown = () => {
 					style={{
 						backgroundColor: '#F5841F',
 						color: '#FFF',
+						fontWeight: '600',
 						paddingLeft: 4,
 						paddingRight: 4,
 					}}
 				>
-					hh
+					00
 				</Text>
 				<Text
 					style={{
@@ -47,11 +48,12 @@ const FlashSaleCountdown = () => {
 					style={{
 						backgroundColor: '#F5841F',
 						color: '#FFF',
+						fontWeight: '600',
 						paddingLeft: 4,
 						paddingRight: 4,
 					}}
 				>
-					mm
+					00
 				</Text>
 				<Text
 					style={{
@@ -65,11 +67,12 @@ const FlashSaleCountdown = () => {
 					style={{
 						backgroundColor: '#F5841F',
 						color: '#FFF',
+						fontWeight: '600',
 						paddingLeft: 4,
 						paddingRight: 4,
 					}}
 				>
-					ss
+					00
 				</Text>
 			</Box>
 		</Box>

@@ -122,7 +122,7 @@ const NavigationItem = ({
 				justifyContent: 'center',
 			}}
 		>
-			<AntDesign name={icon} size={24} color='black' />
+			<AntDesign name={icon} size={26} color='black' />
 			<Text
 				style={{
 					fontSize: 14,
