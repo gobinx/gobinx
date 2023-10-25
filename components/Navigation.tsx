@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native'
 
 // Redux
 import { useBinxDispatch, useBinxSelector } from '../redux/store'
-import { toggleBinx } from '../redux/slices/binxSlice'
+import { toggleBinx } from '../redux/slices/binx.slice'
 
 // Gluestack
 import { Box, Image, Text } from '@gluestack-ui/themed'

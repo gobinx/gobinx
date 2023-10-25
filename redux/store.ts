@@ -3,8 +3,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux'
 
 // Slices
-import authSlice from './slices/authSlice'
-import binxSlice from './slices/binxSlice'
+import authSlice from './slices/auth.slice'
+import binxSlice from './slices/binx.slice'
 
 const rootReducer = combineReducers({
 	auth: authSlice,

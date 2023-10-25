@@ -3,11 +3,11 @@ import { TouchableOpacity } from 'react-native'
 
 // Redux
 import { useBinxDispatch, useBinxSelector } from '../redux/store'
-import { setAccessToken } from '../redux/slices/authSlice'
+import { setAccessToken } from '../redux/slices/auth.slice'
 
 // GraphQL
 import { useQuery } from '@apollo/client'
-import { GET_PROFILE } from '../lib/graphql/queries/authQueries'
+import { GET_PROFILE } from '../lib/graphql/queries/auth.queries'
 
 // Gluestack
 import { Box, ScrollView, Text } from '@gluestack-ui/themed'

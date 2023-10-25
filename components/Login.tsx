@@ -1,23 +1,27 @@
 // React & React Native
 import { useState } from 'react'
 import { Platform } from 'react-native'
+import WebView from 'react-native-webview'
+
+// Redux
+import { useBinxDispatch, useBinxSelector } from '../redux/store'
+import { setAccessToken } from '../redux/slices/auth.slice'
 
 // GraphQL
-import { useMutation, useQuery } from '@apollo/client'
-import { LOGIN_MUTATION } from '../lib/graphql/mutations/authMutations'
+import { useMutation } from '@apollo/client'
+import { LOGIN_MUTATION } from '../lib/graphql/mutations/auth.mutations'
 
 // Gluestack
 import {
 	Box,
 	Button,
 	ButtonText,
-	Icon,
 	Input,
 	InputField,
 	Text,
 } from '@gluestack-ui/themed'
-import { useBinxDispatch, useBinxSelector } from '../redux/store'
-import { setAccessToken } from '../redux/slices/authSlice'
+
+// Components
 import Spacer from './Spacer'
 
 const Login = () => {
@@ -28,6 +32,9 @@ const Login = () => {
 
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
+	const [showWebview, setShowWebview] = useState(false)
+	const [webviewUrl, setWebviewUrl] = useState('')
 
 	const handleLogin = async () => {
 		try {
@@ -40,14 +47,26 @@ const Login = () => {
 				},
 			})
 
-			console.log(data)
-
 			dispatch(setAccessToken(data.login))
 		} catch (e) {
 			console.log(e)
 
 			console.log(error)
 		}
+	}
+
+	const handleGoogleLogin = () => {
+		setWebviewUrl('http://localhost:3000/v1/oauth/google')
+		setShowWebview(true)
+	}
+
+	const onMessage = (event) => {
+		const token = event.nativeEvent.data
+
+		dispatch(setAccessToken(token))
+
+		setWebviewUrl('')
+		setShowWebview(false)
 	}
 
 	return (
@@ -149,9 +168,9 @@ const Login = () => {
 				<Button
 					style={{
 						backgroundColor: '#FFF',
-
 						flex: 1,
 					}}
+					onPress={handleGoogleLogin}
 				>
 					<ButtonText
 						style={{
@@ -170,6 +189,24 @@ const Login = () => {
 					<ButtonText>Login with Facebook</ButtonText>
 				</Button>
 			</Box>
+
+			{showWebview && (
+				<WebView
+					source={{
+						uri: webviewUrl,
+					}}
+					onMessage={onMessage}
+					userAgent='Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; AS; rv:11.0) like Gecko'
+					containerStyle={{
+						position: 'absolute',
+						top: 0,
+						right: 0,
+						bottom: 0,
+						left: 0,
+						zIndex: 999,
+					}}
+				/>
+			)}
 		</Box>
 	)
 }

@@ -10,7 +10,7 @@ import {
 } from '@apollo/client'
 
 // const BASE_URL = 'http://api.gobinx.com/v1'
-const BASE_URL = 'http://localhost:3000/v1'
+const BASE_URL = 'http://localhost:3000/v1/gql'
 
 const httpLink = new HttpLink({
 	uri: BASE_URL,
